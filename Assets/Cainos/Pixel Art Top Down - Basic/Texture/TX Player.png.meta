@@ -120,9 +120,9 @@ TextureImporter:
       name: TX Player F
       rect:
         serializedVersion: 2
-        x: 6
+        x: 0
         y: 81
-        width: 21
+        width: 32
         height: 37
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -141,9 +141,9 @@ TextureImporter:
       name: TX Player B
       rect:
         serializedVersion: 2
-        x: 38
+        x: 32
         y: 81
-        width: 21
+        width: 32
         height: 37
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -162,13 +162,13 @@ TextureImporter:
       name: TX Player S
       rect:
         serializedVersion: 2
-        x: 69
+        x: 64
         y: 81
-        width: 21
-        height: 38
+        width: 32
+        height: 37
       alignment: 7
       pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 28}
+      border: {x: 0, y: 0, z: 0, w: 27}
       outline: []
       physicsShape: []
       tessellationDetail: 0
