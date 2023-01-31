@@ -11,6 +11,8 @@ public class DoorScript : MonoBehaviour
     public Sprite doorShadowOpen;
     public Sprite doorShadowClose;
     public bool isOpen;
+    public AudioSource OpeningDoorSound;
+    public AudioSource RockButtonSound;
 
     private SpriteRenderer _sprite;
     private SpriteRenderer _shadowSprite;
@@ -28,6 +30,7 @@ public class DoorScript : MonoBehaviour
     public void OpenDoor()
     {
         StartCoroutine(OpeningDoor());
+        
     }
 
     private IEnumerator OpeningDoor()
@@ -47,8 +50,12 @@ public class DoorScript : MonoBehaviour
             _col.enabled = true;
         }
 
+        RockButtonSound.Play();
+        yield return new WaitForSeconds(0.5f);
+
         mainCamera.enabled = false;
         _ownCamera.SetActive(true);
+        OpeningDoorSound.Play();
 
         yield return new WaitForSeconds(1f);
         
