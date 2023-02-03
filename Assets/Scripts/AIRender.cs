@@ -44,4 +44,17 @@ public class AIRender : MonoBehaviour
         print(dir);
 
     }
+
+    public void Spawning()
+    {
+        _animator.Play("AM IA In");
+        StartCoroutine(Spawned());
+    }
+
+    public IEnumerator Spawned() {
+
+        yield return new WaitForSeconds(0.3f);
+        aiPath.canMove = true;
+
+    }
 }

@@ -34,7 +34,6 @@ public class AltarManager : MonoBehaviour
     private void CheckAllAltarsStates()
     {
         if(_count == altars.Count) afterActionEvent.Invoke();
-        if(_count == altars.Count) afterActionEvent.Invoke();
     }
     
     
