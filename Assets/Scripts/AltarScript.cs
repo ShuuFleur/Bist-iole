@@ -2,13 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AltarScript : MonoBehaviour
 {
     [SerializeField] public bool nonInteractable;
     [SerializeField] public SpriteRenderer centralRune;
+    [SerializeField] public UnityEvent interactionEvent;
 
-    private bool _runeState = false;
+    public bool _runeState = false;
 
     private void Awake()
     {
@@ -17,12 +19,10 @@ public class AltarScript : MonoBehaviour
         centralRune.color = _runeState ? new Color(1, 1 , 1, 1) : new Color(0, 0 , 0, 0.1f);
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    public void ChangeState(bool state)
     {
-        if(nonInteractable) return;
-
-        _runeState = !_runeState;
-        if (_runeState)
+        _runeState = state;
+        if (state)
         {
             centralRune.color = new Color(1, 1 , 1, 1);
         }
@@ -30,6 +30,14 @@ public class AltarScript : MonoBehaviour
         {
             centralRune.color = new Color(0, 0 , 0, 0.1f);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if(nonInteractable) return;
         
+        _runeState = !_runeState;
+        ChangeState(_runeState);
+        interactionEvent.Invoke();
     }
 }

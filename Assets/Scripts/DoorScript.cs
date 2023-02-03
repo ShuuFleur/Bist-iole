@@ -13,6 +13,7 @@ public class DoorScript : MonoBehaviour
     public bool isOpen;
     public AudioSource OpeningDoorSound;
     public AudioSource RockButtonSound;
+    public Animator animator1;
 
     private SpriteRenderer _sprite;
     private SpriteRenderer _shadowSprite;
@@ -51,7 +52,8 @@ public class DoorScript : MonoBehaviour
         }
 
         RockButtonSound.Play();
-        yield return new WaitForSeconds(0.5f);
+        animator1.SetTrigger("PillarActivation");
+        yield return new WaitForSeconds(0.75f);
 
         mainCamera.enabled = false;
         _ownCamera.SetActive(true);
