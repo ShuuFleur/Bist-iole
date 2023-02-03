@@ -7,11 +7,15 @@ public class MenuPrincipal : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("Dialogues");
+        SceneManager.LoadScene("Dialogue_01");
     }
     public void Quit()
     {
         Application.Quit();
     }
 
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MenuPrincipal_00");
+    }
 }

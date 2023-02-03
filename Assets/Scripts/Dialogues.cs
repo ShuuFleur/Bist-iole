@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Dialogues : MonoBehaviour
 {
@@ -52,6 +53,7 @@ public class Dialogues : MonoBehaviour
         else
         {
             Debug.Log("Fin de l'index.");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
     }
