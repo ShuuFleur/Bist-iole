@@ -53,7 +53,7 @@ public class DoorScript : MonoBehaviour
 
         RockButtonSound.Play();
         animator1.SetTrigger("PillarActivation");
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSeconds(0.6f);
 
         mainCamera.enabled = false;
         _ownCamera.SetActive(true);
