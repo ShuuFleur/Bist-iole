@@ -11,23 +11,21 @@ public class AltarManager : MonoBehaviour
 
     [SerializeField] private UnityEvent afterActionEvent;
 
-    private int count;
+    private int _count;
     
     public void ChangeThisAltarState(AltarScript currentAltar)
     {
 
         if(currentAltar.nonInteractable) return;
                 
-        if (altars.IndexOf(currentAltar) == count)
+        if (altars.IndexOf(currentAltar) == _count)
         {
             currentAltar.nonInteractable = true;
-            count++;
-            print("plaque " + (altars.IndexOf(currentAltar)+1) + " touché");
+            _count++;
         }
         else
         {
             currentAltar.ChangeState(false);
-            print("heeep mauvaise plaque, c'est la plaque " + (altars.IndexOf(currentAltar)+1) + " ça");
         }
         
         CheckAllAltarsStates();
@@ -35,7 +33,8 @@ public class AltarManager : MonoBehaviour
 
     private void CheckAllAltarsStates()
     {
-        if(count == altars.Count) afterActionEvent.Invoke();
+        if(_count == altars.Count) afterActionEvent.Invoke();
+        if(_count == altars.Count) afterActionEvent.Invoke();
     }
     
     
