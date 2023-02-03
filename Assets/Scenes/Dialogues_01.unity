@@ -1647,7 +1647,7 @@ MonoBehaviour:
     moi, d'accord ? S'il te pla\xEEt ? "
   typingSpeed: 0.05
   voice: {fileID: 1907183207}
-  voiceS: {fileID: 0}
+  voiceS: {fileID: 8300000, guid: 3f14a942ff7584e40b52fe18a04aab5c, type: 3}
   continueButton: {fileID: 1017701388}
 --- !u!4 &1907183206
 Transform:
@@ -1674,15 +1674,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: 3f14a942ff7584e40b52fe18a04aab5c, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 19
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
